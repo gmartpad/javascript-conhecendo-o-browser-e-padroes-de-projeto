@@ -14,11 +14,15 @@ class NegociacaoController {
 
         event.preventDefault();        
 
-        let negociacao = new Negociacao(
-            this._inputData.value,
-            this._inputQuantidade.value,
-            this._inputValor.value
-        );
+        // 2016-11-16
+        let data = new Date(this._inputData.value.replace('/-/g', ','))
+        console.log(data);
+
+        // let negociacao = new Negociacao(
+        //     this._inputData.value,
+        //     this._inputQuantidade.value,
+        //     this._inputValor.value
+        // );
 
         // adicionar a negociação em uma lista
 
