@@ -15,7 +15,13 @@ class NegociacaoController {
         event.preventDefault();        
 
         // 2016-11-16
-        let data = new Date(this._inputData.value.replace('/-/g', ','))
+        let data = new Date(
+            this._inputData.value
+            .split("-")
+            .map((value, index)=>{
+                return value
+            })
+        )
         console.log(data);
 
         // let negociacao = new Negociacao(
