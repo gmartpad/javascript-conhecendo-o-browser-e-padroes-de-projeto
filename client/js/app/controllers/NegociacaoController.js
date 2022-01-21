@@ -12,15 +12,11 @@ class NegociacaoController {
 
     adiciona(event){
 
-        event.preventDefault();        
+        event.preventDefault();     
 
-        // 2016-11-16
-        let data = new Date(
-            this._inputData.value
-            .split("-")
-            .map((value, index)=>value)
-        )
-        console.log(data);
+        let helper = new DateHelper();
+        
+        let data = helper.textoParaData(this._inputData.value)
 
         let negociacao = new Negociacao(
             data,
@@ -28,10 +24,7 @@ class NegociacaoController {
             this._inputValor.value
         );
 
-        let diaMesAno = negociacao.data.getDate() + "/" + (negociacao.data.getMonth() + 1) + "/" + negociacao.data.getFullYear()
-
-        console.log(diaMesAno)
-
+        console.log(helper.dataParaTexto(negociacao.data))
         // adicionar a negociação em uma lista
 
     }
