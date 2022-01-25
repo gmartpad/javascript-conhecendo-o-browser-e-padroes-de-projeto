@@ -4,7 +4,7 @@ class NegociacoesView extends View {
         super(elementoPai);
     }
 
-    _template(model) {
+    template(model) {
 
         return `
         

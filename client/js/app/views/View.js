@@ -6,9 +6,13 @@ class View {
 
     }
 
+    template() {
+        throw new Error("Método Template deve ser implementado");
+    }
+
     update(model) {
 
-        this._elementoPai.innerHTML = this._template(model);
+        this._elementoPai.innerHTML = this.template(model);
 
     }
 
